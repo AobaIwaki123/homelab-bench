@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: homelab-bench
-          image: ghcr.io/aobaiwaki123/homelab-bench:20260830-dynamic-api
+          image: ghcr.io/aobaiwaki123/homelab-bench:20260830-dynamic-api-fix
           ports:
             - containerPort: 3000
           env:
