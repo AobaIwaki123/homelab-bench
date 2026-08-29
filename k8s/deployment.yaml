@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: homelab-bench
+  labels:
+    pod-security.kubernetes.io/enforce: baseline
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homelab-bench
+  namespace: homelab-bench
+  labels:
+    app: homelab-bench
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homelab-bench
+  template:
+    metadata:
+      labels:
+        app: homelab-bench
+    spec:
+      containers:
+        - name: homelab-bench
+          image: ghcr.io/aobaiwaki123/homelab-bench:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: LLM_BENCH_API_URL
+              value: "http://llm-gpu-service.ai.svc.cluster.local:8080"
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homelab-bench
+  namespace: homelab-bench
+spec:
+  selector:
+    app: homelab-bench
+  ports:
+    - port: 3000
+      targetPort: 3000
