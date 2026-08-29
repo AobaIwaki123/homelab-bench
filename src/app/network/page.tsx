@@ -102,7 +102,7 @@ export default function NetworkPage() {
               },
               {
                 name: "homelab-bench (This Site)",
-                endpoint: "bench.example.com",
+                endpoint: "bench.aooba.net",
                 desc: "Next.js SSR dashboard. Fetches benchmark data from internal cluster DNS.",
                 badge: "Public",
                 badgeColor: "bg-blue-900 text-blue-300",

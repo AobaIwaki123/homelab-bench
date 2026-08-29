@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: cloudflare-tunnel
   rules:
-    - host: bench.example.com  # ご利用のドメインに変更してください
+    - host: bench.aooba.net
       http:
         paths:
           - path: /
