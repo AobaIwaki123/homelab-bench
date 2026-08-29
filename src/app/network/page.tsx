@@ -26,7 +26,7 @@ export default function NetworkPage() {
                     ip: "192.168.11.15",
                     role: "LLM Inference + Benchmark API",
                     infra: "Windows 11 / WSL2",
-                    workloads: "llama-server (Port 8080) — GTX 1650 Ti / Vulkan",
+                    workloads: "llama-server (Port 8088) — GTX 1650 Ti / Vulkan",
                     highlight: true,
                   },
                   {
@@ -88,21 +88,21 @@ export default function NetworkPage() {
             {[
               {
                 name: "LLM Inference API",
-                endpoint: "llm-gpu-service.ai.svc.cluster.local:8080/v1",
+                endpoint: "llm-gpu-service.ai.svc.cluster.local:8088/v1",
                 desc: "OpenAI-compatible inference endpoint. Served by Unified AI Gateway → llama-server (Vulkan).",
                 badge: "Internal",
                 badgeColor: "bg-green-900 text-green-300",
               },
               {
                 name: "Benchmark JSON API",
-                endpoint: "llm-gpu-service.ai.svc.cluster.local:8080/api/benchmarks",
+                endpoint: "llm-gpu-service.ai.svc.cluster.local:8088/api/benchmarks",
                 desc: "Returns benchmarks.json with accuracy, throughput, and latency for all evaluated models.",
                 badge: "Internal",
                 badgeColor: "bg-green-900 text-green-300",
               },
               {
                 name: "homelab-bench (This Site)",
-                endpoint: "bench.aooba.net",
+                endpoint: "bench.example.com",
                 desc: "Next.js SSR dashboard. Fetches benchmark data from internal cluster DNS.",
                 badge: "Public",
                 badgeColor: "bg-blue-900 text-blue-300",

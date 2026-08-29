@@ -24,7 +24,7 @@ export interface BenchmarkData {
 }
 
 export async function fetchBenchmarks(): Promise<BenchmarkData> {
-  const apiUrl = process.env.LLM_BENCH_API_URL ?? "http://localhost:8080";
+  const apiUrl = process.env.LLM_BENCH_API_URL ?? "http://localhost:8088";
   const res = await fetch(`${apiUrl}/api/benchmarks`, {
     next: { revalidate: 300 }, // 5 min cache
   });

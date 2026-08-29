@@ -41,7 +41,7 @@ export default function SpecPage() {
               { label: "OS", value: "Ubuntu 24.04 LTS (WSL2 on Windows 11)" },
               { label: "Inference Engine", value: "llama.cpp (Vulkan backend)" },
               { label: "API Server", value: "llama-server (OpenAI Compatible)" },
-              { label: "Gateway", value: "Unified AI Gateway (Python, Port 8080)" },
+              { label: "Gateway", value: "Unified AI Gateway (Python, Port 8088)" },
               { label: "Model Format", value: "GGUF (Q4_K_M quantization)" },
               { label: "Best Model", value: "Meta Llama-3.2-3B-Instruct (Accuracy: 92.5%)" },
             ],

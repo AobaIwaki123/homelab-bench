@@ -13,7 +13,7 @@
   ↓
 [homelab-bench Pod (homelab-bench Namespace)]
   ↓ Server Component fetch (クラスタ内 DNS)
-[llm-gpu-service.ai.svc.cluster.local:8080/api/benchmarks]
+[llm-gpu-service.ai.svc.cluster.local:8088/api/benchmarks]
   ↓
 [WSL2 Unified AI Gateway → benchmarks.json]
 ```
@@ -87,7 +87,7 @@ kubectl run test --rm -it --image=curlimages/curl --restart=Never -- \
 
 | 変数名 | デフォルト値 | 説明 |
 | :--- | :--- | :--- |
-| `LLM_BENCH_API_URL` | `http://llm-gpu-service.ai.svc.cluster.local:8080` | ベンチマーク JSON を提供する Unified AI Gateway の URL |
+| `LLM_BENCH_API_URL` | `http://llm-gpu-service.ai.svc.cluster.local:8088` | ベンチマーク JSON を提供する Unified AI Gateway の URL |
 
 ---
 

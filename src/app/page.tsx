@@ -1,6 +1,10 @@
 import { fetchBenchmarks } from "@/lib/benchmarks";
 import BenchmarkTable from "@/components/BenchmarkTable";
 
+// The benchmark API only exists inside the cluster at runtime.  Do not bake a
+// failed build-time request into the generated page.
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   let data;
   try {
